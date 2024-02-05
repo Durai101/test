@@ -1,0 +1,27 @@
+
+Check boxes 
+
+select all
+select last 2
+select first 2
+
+unselect if selected
+
+https://itera-qa.azurewebsites.net/home/automation
+
+Dropdowns
+----------
+1) Drop down having select tag in DOM.   use ---- Select class
+2) DropDown not having select tag in DOM ( input/div) - Bootstrap dropdown
+https://www.jquery-az.com/boots/demo.php?ex=63.0_2
+3) Auto Suggest drop down ( Dynamic)
+
+
+
+
+Assignment
+----------
+1) Handle dropdown without using Select Class 
+
+Select Country & State
+https://phppot.com/demo/jquery-dependent-dropdown-list-countries-and-states/

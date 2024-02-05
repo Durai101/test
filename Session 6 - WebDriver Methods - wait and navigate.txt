@@ -1,0 +1,102 @@
+wait Methods:
+============
+
+wait statements will be used to solve synchronization problem in automation.
+
+Most of the web applications are developed using Ajax and Javascript. 
+When a page is loaded by the browser the elements which we want to interact with may load at different time intervals.
+
+Thread.sleep(ms)
+
+implicit wait
+explicit wait/ fluent state
+
+sleep() : provided by java itself( not selenium command)
+------------
+Adv:
+1) easy to use
+
+DisAdvantage:
+
+1) if the time is not suffitient then you will get exception
+2) it will wait for maximum time out. this will reduce the script perforemce.
+3) have to use multiple times where needed
+
+implicit wait
+----------
+The Implicit Wait in Selenium is used to tell the web driver to wait for a certain amount of time before it throws a “No Such Element Exception”. 
+The default setting is 0. Once we set the time, the web driver will wait for the element for that time before throwing an exception.
+
+
+Adv:
+1) single time/one statement
+2) it will not wait till maximum time if the element is available
+3) Applicable for all the elements
+4) easy to use
+
+Disadvantge:
+1) if the time is not suffitient then you will get exception
+
+Explicit wait
+------------
+Explicit Wait in Selenium is used to tell the Web Driver to wait for certain conditions (Expected Conditions) or maximum time exceeded before throwing “ElementNotVisibleException” exception. 
+It is an intelligent kind of wait, but it can be applied only for specified elements. It gives better options than implicit wait as it waits for dynamically loaded Ajax elements.
+
+
+Specifies the amount of time the driver should wait when searching for an element if it isnot immediately present. 
+
+1) Conditional based, it will work more effectively.
+2) finding element is inclusive
+3) it will wait for condition to be true, the consider the time
+4) we need to write multiple statements for multiple elements 
+
+WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(15));
+		wait.until(ExpectedConditions.elementToBeClickable(By.id("idText"))).click();
+
+Fluent wait
+------
+ // Waiting 30 seconds for an element to be present on the page, checking
+   // for its presence once every 5 seconds.
+  
+ Wait<WebDriver> mywait = new FluentWait<WebDriver>(driver)
+       .withTimeout(Duration.ofSeconds(30L))
+       .pollingEvery(Duration.ofSeconds(5L))
+       .ignoring(NoSuchElementException.class);
+
+
+   WebElement foo = wait.until(new Function<WebDriver, WebElement>() {
+     public WebElement apply(WebDriver driver) {
+       return driver.findElement(By.id("foo"));
+     }
+   });
+
+
+Navigational commands
+-----------------
+navigate().to(url)   same as driver.get(url)
+navigate().forward()
+navigate().back()
+navigate().refresh()
+
+driver.navigate().to(url);
+
+driver.manage().window().maximize();
+
+"https://www.google.com"   -----> string
+
+URL myurl=new URL("https://www.google.com")
+
+navigate().to(URL) 
+    accepts url is URL & Strign format
+
+driver.get()  
+	accepts only String format
+
+
+
+
+
+
+
+
+

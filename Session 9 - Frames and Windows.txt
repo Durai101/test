@@ -1,0 +1,55 @@
+
+iFrame in Selenium Webdriver is a web page or an inline frame which is embedded in another web page or an HTML document embedded inside another HTML document. 
+The iframe is often used to add content from other sources like an advertisement into a web page.
+The iframe is defined with the <iframe> tag.
+
+driver.switchTo().frame(name/id)
+driver.switchTo().frame(WebElement)
+driver.switchTo().frame(index)
+
+driver.switchTo().defaultContent();
+driver.switchTo().parentFrame();
+
+
+
+===========
+packageListFrame
+packageFrame
+classFrame
+
+https://www.selenium.dev/selenium/docs/api/java/index.html?org/openqa/selenium/package-summary.html
+https://ui.vision/demo/webtest/frames/
+
+handle browser windows
+-----
+
+getWindowHandle() - return id of single window( in which driver focused)
+getWindowHandles()- returns id's of multiple windows
+
+driver.switchTo().window(window id)
+
+driver.switchTo().window(window id).getTitle()
+
+many browser windows opened
+
+close() - close single browser window which is focud by driver.
+quit() - close all the browser windows which are currently opened
+
+3 types of switching commands
+---
+1) driver.switchTo().alert()
+2)  driver.switchTo().frame()
+3) driver.switcho().window()
+
+Assignments
+------------
+Search, Opening links, switch to browser windows, capture titles, close all browser windows
+	https://testautomationpractice.blogspot.com/
+
+iframe:
+	http://the-internet.herokuapp.com/iframe
+
+
+
+
+
